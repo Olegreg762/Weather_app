@@ -29,11 +29,11 @@ $("#search_btn").on("click", function(){
   function show_local(){
     const num_elements = 5
     for(let i = 0; i < num_elements; i++){
-        $(`#history_${i}`).text(`${event}`)
-        $(`.history${i}`).text(localStorage.getItem(`#history_${i}`))
-        if(localStorage.getItem(`#history_${i}`) != undefined){
+        $(`#history_${i}`).text(localStorage.getItem(`#history_${i}`))
+        if(localStorage.getItem(`#history_${i}`) != null){
             $(`#history_${i}`).removeClass("invisible").addClass("visible");
             }
+        console.log(localStorage.getItem(`#history_${i}`))
         }
     };
 
