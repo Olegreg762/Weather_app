@@ -11,7 +11,7 @@
 
     <div class="row bg-dark bg-secondary bg-gradient">
         <!-- Card For City Search -->
-        <city-search-card class="card rounded-0 bg-dark bg-secondary bg-gradient col-12 col-lg-3">
+        <city-search-card class="card rounded-0 bg-dark bg-secondary bg-gradient col-12 col-lg-4">
             <h1>Search For A City:</h1>
             <input id="city_input" type="text"><br>
             <button id="search_btn">Search</button><br>
@@ -21,16 +21,17 @@
             <ul>
                 <h2><span id="city"></span> <span id="date"></span></h2>
                 <div class="card rounded-0 bg-dark bg-secondary bg-gradient col-12 col-lg-2">
-                    <li id="temp_0">test_0</li>
-                    <li id="wind_0">test_0</li>
-                    <li id="humid_0">test_0</li>
+                    <img id="icon_0"></img>
+                    <li id="temp_0"></li>
+                    <li id="wind_0"></li>
+                    <li id="humid_0"></li>
                 </div>
             </ul>
         </selected-city-now>
     </div>
     <!-- Card for the Chosen City Forcast class="row "-->
     <div class="row">
-    <div class="card rounded-0 bg-dark bg-secondary bg-gradient col-12 col-lg-3">
+    <div class="card rounded-0 bg-dark bg-secondary bg-gradient col-12 col-lg-2">
             <ul id="history">
                 <button class="invisible row history_button" id="history_0"></button>
                 <button class="invisible row history_button" id="history_1"></button>
@@ -39,47 +40,57 @@
                 <button class="invisible row history_button" id="history_4"></button>
             </ul>
         </div>
-        <selected-city-forcast class="card rounded-0 bg-dark bg-secondary bg-gradient justify-content-center col-12 col-lg-9">
+        <selected-city-forcast class="card rounded-0 bg-dark bg-secondary bg-gradient justify-content-center col-12 col-lg-10">
             <h2 class="align-text-center text-center">5 Day Forecast</h2>
 
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-2">
                     <ul class="card rounded-0 bg-dark bg-secondary bg-gradient" id="day_1">
-                        <li id="temp_1">test_1</li>
-                        <li id="wind_1">test_1</li>
-                        <li id="humid_1">test_1</li>
+                        <img id="icon_1"></img>
+                        <li id="date_1"></li>
+                        <li id="temp_1"></li>
+                        <li id="wind_1"></li>
+                        <li id="humid_1"></li>
                     </ul>
                 </div>
 
                 <div class="col-12 col-lg-2">
                     <ul class="card rounded-0 bg-dark bg-secondary bg-gradient" id="day_2">
-                        <li id="temp_2">test_2</li>
-                        <li id="wind_2">test_2</li>
-                        <li id="humid_2">test_2</li>
+                        <img id="icon_2"></img>
+                        <li id="date_2"></li>
+                        <li id="temp_2"></li>
+                        <li id="wind_2"></li>
+                        <li id="humid_2"></li>
                     </ul>
                 </div>
 
                 <div class="col-12 col-lg-2">
                     <ul class="card rounded-0 bg-dark bg-secondary bg-gradient" id="day_3">
-                        <li id="temp_3">test_3</li>
-                        <li id="wind_3">test_3</li>
-                        <li id="humid_3">test_3</li>
+                        <img id="icon_3"></img>
+                        <li id="date_3"></li>
+                        <li id="temp_3"></li>
+                        <li id="wind_3"></li>
+                        <li id="humid_3"></li>
                     </ul>
                 </div>
 
                 <div class="col-12 col-lg-2">
                     <ul class="card rounded-0 bg-dark bg-secondary bg-gradient" id="day_4">
-                        <li id="temp_4">test_4</li>
-                        <li id="wind_4">test_4</li>
-                        <li id="humid_4">test_4</li>
+                        <img id="icon_4"></img>
+                        <li id="date_4"></li>
+                        <li id="temp_4"></li>
+                        <li id="wind_4"></li>
+                        <li id="humid_4"></li>
                     </ul>
                 </div>
 
                 <div class="col-12 col-lg-2">
                     <ul class="card rounded-0 bg-dark bg-secondary bg-gradient" id="day_5">
-                        <li id="temp_5">test_5</li>
-                        <li id="wind_5">test_5</li>
-                        <li id="humid_5">test_5</li>
+                        <img id="icon_5"></img>
+                        <li id="date_5"></li>
+                        <li id="temp_5"></li>
+                        <li id="wind_5"></li>
+                        <li id="humid_5"></li>
                     </ul>
                 </div>
             </div>
