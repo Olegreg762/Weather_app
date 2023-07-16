@@ -9,7 +9,7 @@ let country_code = ""
 
 const api_key = window.config.api_key;
 $("#city").text(city_name)
-    $("#date").text(date.format("MMM/DD/YYYY"));
+    // $("#date").text(date.format("MMM/DD/YYYY"));
 
     $("#search_btn").on("click", function(){
         // Records the text content of the div for the button press
@@ -70,40 +70,52 @@ $("#city").text(city_name)
                         return response.json();
                     })
                     .then(function(data){
-                        $("#icon_0").attr("src", `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`)
-                        $("#temp_0").text(`Temp ${data.list[0].main.temp}F`)
-                        $("#wind_0").text(`Wind ${data.list[0].wind.speed}MPH`)
-                        $("#humid_0").text(`Humidity ${data.list[0].main.humidity}%`)
+                        console.log(data)
+                        for(let i =0, jd = 0; i<6; i++, jd += 8){
+                            if(jd == 40){
+                                jd--
+                            }
+                            console.log(jd)
+                            $(`#icon_${i}`).attr("src", `http://openweathermap.org/img/w/${data.list[jd].weather[0].icon}.png`)
+                            $(`#date_${i}`).text(`${dayjs(data.list[jd].dt_txt).format("MMM/DD/YYYY")}`)
+                            $(`#temp_${i}`).text(`Temp ${data.list[jd].main.temp}F`)
+                            $(`#wind_${i}`).text(`Wind ${data.list[jd].wind.speed}MPH`)
+                            $(`#humid_${i}`).text(`Humidity ${data.list[jd].main.humidity}%`)
+                        }
+                        // $("#icon_0").attr("src", `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`)
+                        // $("#temp_0").text(`Temp ${data.list[0].main.temp}F`)
+                        // $("#wind_0").text(`Wind ${data.list[0].wind.speed}MPH`)
+                        // $("#humid_0").text(`Humidity ${data.list[0].main.humidity}%`)
 
-                        $("#icon_1").attr("src", `http://openweathermap.org/img/w/${data.list[6].weather[0].icon}.png`)
-                        $("#date_1").text(`${dayjs(data.list[6].dt_txt).format("MMM/DD/YYYY")}`)
-                        $("#temp_1").text(`Temp ${data.list[6].main.temp}F`)
-                        $("#wind_1").text(`Wind ${data.list[6].wind.speed}MPH`)
-                        $("#humid_1").text(`Humidity ${data.list[6].main.humidity}%`)
+                        // $("#icon_1").attr("src", `http://openweathermap.org/img/w/${data.list[6].weather[0].icon}.png`)
+                        // $("#date_1").text(`${dayjs(data.list[6].dt_txt).format("MMM/DD/YYYY")}`)
+                        // $("#temp_1").text(`Temp ${data.list[6].main.temp}F`)
+                        // $("#wind_1").text(`Wind ${data.list[6].wind.speed}MPH`)
+                        // $("#humid_1").text(`Humidity ${data.list[6].main.humidity}%`)
 
-                        $("#icon_2").attr("src", `http://openweathermap.org/img/w/${data.list[14].weather[0].icon}.png`)
-                        $("#date_2").text(`${dayjs(data.list[14].dt_txt).format("MMM/DD/YYYY")}`)
-                        $("#temp_2").text(`Temp ${data.list[14].main.temp}F`)
-                        $("#wind_2").text(`Wind ${data.list[14].wind.speed}MPH`)
-                        $("#humid_2").text(`Humidity ${data.list[14].main.humidity}%`)
+                        // $("#icon_2").attr("src", `http://openweathermap.org/img/w/${data.list[14].weather[0].icon}.png`)
+                        // $("#date_2").text(`${dayjs(data.list[14].dt_txt).format("MMM/DD/YYYY")}`)
+                        // $("#temp_2").text(`Temp ${data.list[14].main.temp}F`)
+                        // $("#wind_2").text(`Wind ${data.list[14].wind.speed}MPH`)
+                        // $("#humid_2").text(`Humidity ${data.list[14].main.humidity}%`)
 
-                        $("#icon_3").attr("src", `http://openweathermap.org/img/w/${data.list[22].weather[0].icon}.png`)
-                        $("#date_3").text(`${dayjs(data.list[22].dt_txt).format("MMM/DD/YYYY")}`)
-                        $("#temp_3").text(`Temp ${data.list[22].main.temp}F`)
-                        $("#wind_3").text(`Wind ${data.list[22].wind.speed}MPH`)
-                        $("#humid_3").text(`Humidity ${data.list[22].main.humidity}%`)
+                        // $("#icon_3").attr("src", `http://openweathermap.org/img/w/${data.list[22].weather[0].icon}.png`)
+                        // $("#date_3").text(`${dayjs(data.list[22].dt_txt).format("MMM/DD/YYYY")}`)
+                        // $("#temp_3").text(`Temp ${data.list[22].main.temp}F`)
+                        // $("#wind_3").text(`Wind ${data.list[22].wind.speed}MPH`)
+                        // $("#humid_3").text(`Humidity ${data.list[22].main.humidity}%`)
 
-                        $("#icon_4").attr("src", `http://openweathermap.org/img/w/${data.list[30].weather[0].icon}.png`)
-                        $("#date_4").text(`${dayjs(data.list[30].dt_txt).format("MMM/DD/YYYY")}`)
-                        $("#temp_4").text(`Temp ${data.list[30].main.temp}F`)
-                        $("#wind_4").text(`Wind ${data.list[30].wind.speed}MPH`)
-                        $("#humid_4").text(`Humidity ${data.list[30].main.humidity}%`)
+                        // $("#icon_4").attr("src", `http://openweathermap.org/img/w/${data.list[30].weather[0].icon}.png`)
+                        // $("#date_4").text(`${dayjs(data.list[30].dt_txt).format("MMM/DD/YYYY")}`)
+                        // $("#temp_4").text(`Temp ${data.list[30].main.temp}F`)
+                        // $("#wind_4").text(`Wind ${data.list[30].wind.speed}MPH`)
+                        // $("#humid_4").text(`Humidity ${data.list[30].main.humidity}%`)
 
-                        $("#icon_5").attr("src", `http://openweathermap.org/img/w/${data.list[38].weather[0].icon}.png`)
-                        $("#date_5").text(`${dayjs(data.list[38].dt_txt).format("MMM/DD/YYYY")}`)
-                        $("#temp_5").text(`Temp ${data.list[38].main.temp}F`)
-                        $("#wind_5").text(`Wind ${data.list[38].wind.speed}MPH`)
-                        $("#humid_5").text(`Humidity ${data.list[38].main.humidity}%`)
+                        // $("#icon_5").attr("src", `http://openweathermap.org/img/w/${data.list[38].weather[0].icon}.png`)
+                        // $("#date_5").text(`${dayjs(data.list[38].dt_txt).format("MMM/DD/YYYY")}`)
+                        // $("#temp_5").text(`Temp ${data.list[38].main.temp}F`)
+                        // $("#wind_5").text(`Wind ${data.list[38].wind.speed}MPH`)
+                        // $("#humid_5").text(`Humidity ${data.list[38].main.humidity}%`)
             })
         })
     };
