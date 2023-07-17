@@ -1,7 +1,8 @@
 $(function () {
 let i = 0;
 let event = "";
-let city_name = "Topeka";
+let city_name = "New York";
+localStorage.setItem(`#history_0`,city_name);
 
 const api_key = window.config.api_key;
 $("#city").text(city_name)
@@ -13,9 +14,9 @@ $("#city").text(city_name)
         get_weather()
         $("#city").text(event)
         if(i == 0){
-            $(`#history_${i}`).text(`${event}`)
-            localStorage.setItem(`#history_${i}`,event);
-            $(`#history_${i}`).removeClass("invisible").addClass("visible");
+            $(`#history_0`).text(`${event}`)
+            localStorage.setItem(`#history_0`,event);
+            $(`#history_0`).removeClass("invisible").addClass("visible");
             i++
         }else{
             $(`#history_${i}`).text(`${event}`)
