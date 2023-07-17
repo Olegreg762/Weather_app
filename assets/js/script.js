@@ -14,9 +14,9 @@ $("#city").text(city_name)
         get_weather()
         $("#city").text(event)
         if(i == 0){
-            $(`#history_0`).text(`${event}`)
-            localStorage.setItem(`#history_0`,event);
-            $(`#history_0`).removeClass("invisible").addClass("visible");
+            $("#history_0").text(`${event}`)
+            localStorage.setItem("#history_0",event);
+            $("#history_0").removeClass("invisible").addClass("visible");
             i++
         }else{
             $(`#history_${i}`).text(`${event}`)
