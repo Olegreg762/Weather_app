@@ -76,7 +76,6 @@ if(localStorage.getItem("#history_0") == null){
                             }
                             $(`#icon_${i}`).attr("src", `http://openweathermap.org/img/w/${data.list[jd].weather[0].icon}.png`)
                             $(`#date_${i}`).text(`${dayjs(data.list[jd].dt_txt).format("MMM/DD/YYYY")}`)
-                            console.log(dayjs(data.list[jd].dt_txt))
                             $(`#temp_${i}`).text(`Temp ${data.list[jd].main.temp}F`)
                             $(`#wind_${i}`).text(`Wind ${data.list[jd].wind.speed}MPH`)
                             $(`#humid_${i}`).text(`Humidity ${data.list[jd].main.humidity}%`)
