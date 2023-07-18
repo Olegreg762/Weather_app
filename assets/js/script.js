@@ -2,10 +2,14 @@ $(function () {
 let i = 0;
 let event = "";
 let city_name = "New York";
-localStorage.setItem(`#history_0`,city_name);
 
 const api_key = window.config.api_key;
-$("#city").text(city_name)
+if(localStorage.getItem("#history_0") == null){
+    $("#city").text(city_name)
+}else{
+    $("#history_0").text(localStorage.getItem("#history_0"))
+    $("#city").text(localStorage.getItem("#history_0"))
+}
 
     $("#search_btn").on("click", function(){
         // Records the text content of the div for the button press
@@ -72,6 +76,7 @@ $("#city").text(city_name)
                             }
                             $(`#icon_${i}`).attr("src", `http://openweathermap.org/img/w/${data.list[jd].weather[0].icon}.png`)
                             $(`#date_${i}`).text(`${dayjs(data.list[jd].dt_txt).format("MMM/DD/YYYY")}`)
+                            console.log(dayjs(data.list[jd].dt_txt))
                             $(`#temp_${i}`).text(`Temp ${data.list[jd].main.temp}F`)
                             $(`#wind_${i}`).text(`Wind ${data.list[jd].wind.speed}MPH`)
                             $(`#humid_${i}`).text(`Humidity ${data.list[jd].main.humidity}%`)
