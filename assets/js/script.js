@@ -4,7 +4,7 @@ $(function () {
     let i = 0;
     let event = "";
     let city_name = "New York";
-    // Grabs API Key
+    // Retrieves API Key
     const api_key = window.config.api_key;
     // Checks if there is already content in the local storage `#history_0` if not will set it to `New York`
     if(localStorage.getItem("#history_0") == null){
@@ -60,7 +60,7 @@ $(function () {
     // Function that will get the weather of the chosen city
     function get_weather(){
         // url for weather api
-        const weather_geo_url = `http://api.openweathermap.org/geo/1.0/direct?q=${city_name}&limit=1&appid=${api_key}`;
+        const weather_geo_url = `http://api.openweathermap.org/geo/1.0/direct?q=${city_name}&limit=1&appid=${atob(api_key)}`;
         // fetch api data from url to get lat on lon of city then returns a json
         fetch(weather_geo_url)
             .then(function(response){
@@ -71,7 +71,7 @@ $(function () {
                 let lat = data[0].lat;
                 let lon = data[0].lon;
                 // Uses the lat and lon to make another api call to get weather data
-                const weather_data_url = `https://api.openweathermap.org/data//2.5/forecast?units=imperial&lat=${lat}&lon=${lon}&appid=${api_key}`;
+                const weather_data_url = `https://api.openweathermap.org/data//2.5/forecast?units=imperial&lat=${lat}&lon=${lon}&appid=${atob(api_key)}`;
                 fetch(weather_data_url)
                     // Returns json of weather data
                     .then(function(response){
