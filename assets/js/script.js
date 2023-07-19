@@ -60,7 +60,7 @@ $(function () {
     // Function that will get the weather of the chosen city
     function get_weather(){
         // url for weather api
-        const weather_geo_url = `http://api.openweathermap.org/geo/1.0/direct?q=${city_name}&limit=1&appid=${api_key}`;
+        const weather_geo_url = `https://api.openweathermap.org/geo/1.0/direct?q=${city_name}&limit=1&appid=${api_key}`;
         // fetch api data from url to get lat on lon of city then returns a json
         fetch(weather_geo_url)
             .then(function(response){
