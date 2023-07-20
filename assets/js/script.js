@@ -84,7 +84,7 @@ $(function () {
                             if(jd == 40){
                                 jd--
                             }
-                            $(`#icon_${i}`).attr("src", `http://openweathermap.org/img/w/${data.list[jd].weather[0].icon}.png`)
+                            $(`#icon_${i}`).attr("src", `https://openweathermap.org/img/w/${data.list[jd].weather[0].icon}.png`)
                             $(`#date_${i}`).text(`${dayjs(data.list[jd].dt_txt).format("MMM/DD/YYYY")}`)
                             $(`#temp_${i}`).text(`Temp ${data.list[jd].main.temp}F`)
                             $(`#wind_${i}`).text(`Wind ${data.list[jd].wind.speed}MPH`)
