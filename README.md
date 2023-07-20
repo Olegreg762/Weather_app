@@ -1,6 +1,6 @@
 # Weather_app
 
-Here at this repo I create a weather app with a 5 day forecast. The app retrieves the weather 
+Here at this repo I create a [weather app](https://olegreg762.github.io/Weather_app/) with a 5 day forecast. The app retrieves the weather 
 data from the 
 [Open Weather API](https://openweathermap.org/forecast5).<br>
 The user will type in a city and the javascript will make an API call to the
